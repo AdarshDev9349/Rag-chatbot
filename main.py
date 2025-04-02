@@ -1,5 +1,5 @@
 import streamlit as st
-import fitz 
+import pymupdf 
 import faiss
 import numpy as np
 import requests
@@ -15,7 +15,7 @@ TOGETHER_API_URL = "https://api.together.xyz/v1/completions"
 # Function to extract text from PDF
 def extract_text_from_pdf(uploaded_file):
     text = ""
-    pdf_doc = fitz.open(stream=uploaded_file.read(), filetype="pdf")
+    pdf_doc = pymupdf.open(stream=uploaded_file.read(), filetype="pdf")
     for page in pdf_doc:
         text += page.get_text("text") + "\n"
     return text
