@@ -1,5 +1,5 @@
 import streamlit as st
-import fitz  # PyMuPDF for PDF processing
+import fitz 
 import faiss
 import numpy as np
 import requests
